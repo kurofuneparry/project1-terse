@@ -13,7 +13,7 @@ function printItem(item) {
 	p.innerHTML = item.text;
 	p.classList.add(item.state);
 	p.addEventListener("click", function (element) {
-		item.clicked()
+		item.clicked();
 		localStorage.setItem("items", JSON.stringify(items));
 		element.target.classList.add(item.state);
 	})
