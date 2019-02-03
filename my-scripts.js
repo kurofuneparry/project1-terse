@@ -1,6 +1,6 @@
-function Item(text, state) {
+function Item(text, state="none") {
 	this.text = text;
-	this.state = "none";
+	this.state = state;
 	this.clicked = function(){
 		this.state = (this.state == "none") ? "strike" : "invisible";
 	}
