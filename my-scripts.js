@@ -6,7 +6,7 @@ function Item(x) {
 	}
 }
 
-items = (JSON.parse(localStorage.getItem("myData")) || []).map(i => Item(...i))
+items = (JSON.parse(localStorage.getItem("items")) || []).map(i => Item(...i))
 
 function printItem(item) {
 	div = document.createElement("p");
