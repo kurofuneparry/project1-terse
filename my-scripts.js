@@ -9,15 +9,15 @@ function Item(text, state="none") {
 items = (JSON.parse(localStorage.getItem("items")) || []).map(x => new Item(x.text, x.state));
 
 function printItem(item) {
-	div = document.createElement("p");
-	div.innerHTML = item.text;
-	div.classList.add(item.state);
-	div.addEventListener("click", function (element) {
+	p = document.createElement("p");
+	p.innerHTML = item.text;
+	p.classList.add(item.state);
+	p.addEventListener("click", function (element) {
 		item.clicked()
 		localStorage.setItem("items", JSON.stringify(items));
 		element.target.classList.add(item.state);
 	})
-	document.getElementById("list").appendChild(div);
+	document.getElementById("list").appendChild(p);
 }
 for (let i=0; i < items.length; i++) {printItem(items[i]);}
  
