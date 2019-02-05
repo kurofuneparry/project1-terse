@@ -5,7 +5,7 @@ function printItem(item) {
 	p.innerHTML = item.text;
 	p.classList.add(item.state);
 	p.addEventListener("click", function (element) {
-		item.state = (this.state=="none") ? "strike" : "invisible";
+		item.state = (item.state=="none") ? "strike" : "invisible";
 		localStorage.setItem("items", JSON.stringify(items));
 		element.target.classList.add(item.state);
 	})
@@ -14,7 +14,7 @@ function printItem(item) {
 for (let i=0; i < items.length; i++) {printItem(items[i]);}
  
 function createItem() {
-	newItem = {text:prompt("Your new item prompt goes here"), style:"none"};
+	newItem = {text:prompt("Your new item prompt goes here"), state:"none"};
 	items.push(newItem);
 	localStorage.setItem("items", JSON.stringify(items));
 	printItem(newItem);
