@@ -14,7 +14,7 @@ function printItem(item) {
 for (let i=0; i < items.length; i++) {printItem(items[i]);}
  
 function createItem() {
-	newItem = new Item(prompt("Your new item prompt goes here"));
+	newItem = {text:prompt("Your new item prompt goes here"), style:"none"};
 	items.push(newItem);
 	localStorage.setItem("items", JSON.stringify(items));
 	printItem(newItem);
